@@ -811,7 +811,7 @@ public class ConnectionsManager extends BaseController {
             }
             if (hasIpv6) {
                 if (hasStrangeIpv4) {
-                    return USE_IPV4_IPV6_RANDOM;
+                    return USE_IPV6_ONLY;
                 }
                 if (!hasIpv4) {
                     return USE_IPV6_ONLY;
@@ -821,7 +821,7 @@ public class ConnectionsManager extends BaseController {
             FileLog.e(e);
         }
 
-        return USE_IPV4_ONLY;
+        return USE_IPV6_ONLY;
     }
 
     private static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
